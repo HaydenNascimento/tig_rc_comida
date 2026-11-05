@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida com js</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0%;
+            font-family: Arial, sans-serif;
+            background: #050507;
+            color: #fff;
+        }
+
+        .pagina{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+    .menu-carros {
+            width: 220px;
+            padding: 24px 18px;
+            background: rgba(245, 8, 145, 0.1);
+            border-right: 4px solid #ef2b2c;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .menu-carros ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu-carros li{
+            display: flex;
+            gap: 10px;
+            padding: 10px 6px;
+            border-bottom: 1px solid #29292e;
+        }
+
+        .posicao{
+            width: 24px;
+            color: #888;
+            text-align: right;
+            border-right: 1px solid #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pagina">
+
+    <aside id="menu-carros" class="menu-carros">
+        <h1 id="titulo">Race 50 JS</h1>
+
+        <ul id="li">
+            
+        </ul>
+
+    </aside>
+<main class="corrida">
+    Corrida
+</main>
+    </div>
+
+    <script>
+
+        //JSON objects
+        const piloto1 = {
+            "nome": "Russel",
+            "equipa": "Mercedes",
+            "morada": "Rua de cima"
+        };
+
+        console.log(piloto1.nome);
+
+        const piloto2 = {
+            "nome": "Lecrer",
+            "equipa": "Ferrari"
+        };
+
+        const pilotos2 = [piloto1, piloto2];
+
+
+
+        // 1.Apanhar o elemento html pelo seu id
+        const titulo = document.getElementById("titulo");
+
+        // 2.Alterar o novo texto
+        titulo.innerText = "DJ Netinho";
+        console.log(titulo);
+        // Quero apanhar o elemento que temo id menu-carros
+        const menuCarros = document.getElementById("menu-carros");
+
+        const novoP = document.createElement("p");
+        novoP.innerText = "novo P";
+        menuCarros.append(novoP);
+
+        const li = document.getElementById("li");
+
+         pilotos2.forEach((piloto, index )=> {
+           console.log(index);
+           console.log(piloto.morada);
+           const novoLi = document.createElement("li");
+           const spanPosicao = document.createElement("span");
+           spanPosicao.className = "posicao";
+           spanPosicao.innerText = index + 1;
+           //Criar uma span para o nome do piloto
+           const spanNome = document.createElement("span");
+           spanNome.classNome = "nome";
+           spanNome.innerText = piloto.nome;
+           //Criar uma span equipa para o piloto
+           const spanEquipa = document.createElement("span");
+           spanEquipa. classNome = "equipa";
+           spanEquipa.innerText = piloto.equipa;
+
+           novoLi.append(spanPosicao, spanNome, spanEquipa);
+
+           //novoLi.innerText = piloto.nome;
+
+           menuCarros.append(novoLi);
+        });
+
+
+        //alert("Corrida js!");
+
+        //console.log("Acabar com o SLB e SCP!!!");
+
+        //console.log("É Gaby não Gabriel");
+        let pilotos = [1, 2, 4];
+
+        pilotos[3] = 99;
+
+        console.log(pilotos);
+        //inserir um novo valor numa nova posição
+        pilotos.push(101);
+        pilotos.push(201);
+        pilotos.push(301);
+        pilotos.push(401);
+        console.log(pilotos);
+        //mostrar para a consola o valor que esta na posição 8
+        //console.log(pilotos[pilotos.length - 1]);
+
+        for(i = 0; i < pilotos.length; i++) {
+            console.log(pilotos[i]);
+        }
+
+        //Criar um array de strings com 3 posições
+        //e Iterar esse array com um for
+
+        let nomes = ["1-Hayden!", "2-Gaby", "3-Virrgilio"];
+
+        nomes[3] = 7;
+
+        console.log(nomes);
+
+        nomes.push(25);
+        console.log(nomes);
+        //console.log(nomes[nomes.length - 1]);
+
+        for(i = 0; i < nomes.length; i ++) {
+            console.log(nomes[i]);
+        }
+
+
+        const apelidos = ["Pamela", "Gaby", "DJ Netinho"];
+
+        apelidos.forEach( element => {
+            console.log(element);
+        });
+
+        
+    </script>
+
+</body>
+</html>

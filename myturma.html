@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 id="titulo">Este texto é para alterar com o js</h1>
+        <section>
+            <article>
+               <ul>
+                <!-- 
+                   <li>
+                       <span class="ranking"> 1 </span>
+                       <span class="flme"> Star Wars </span>
+                       <span class="ano"> 1977 </span>
+                   </li>
+                >-->
+               </ul>
+            </article>
+        </section>
+    </main>
+    <script>
+        // Tarefa 1: colocar no h1 o texto "Os meus filmes favoritos"
+        // Passo 1 colocar id no h1
+        // Passo 2 apanhar o mesmo o elemento do html com o id titulo
+        const titulo = document.getElementById("titulo")
+        // Passo 3 alterar o texto do h1
+        titulo.innerText = "Os Meus Filmes Favoritos";
+        // Tarefa 2: Criar uma lista de filmes (array de jsonObjects)
+        const filmes = [
+            {'ranking': 1, 'nome': 'Shrek', 'ano': 2001},
+            {'ranking': 2, 'nome': 'Avatar', 'ano': 2009},
+            {'ranking': 3, 'nome': 'Pokemon', 'ano': 1999},
+            {'ranking': 4, 'nome': 'Spider Man', 'ano': 2002}
+    ];
+    // Tarefa 3: Iterar o array de filmes e mandar apenas o nome para a 
+    // consola com o comando console.log()
+    filmes.forEach((filme, index)=> {
+        console.log(index + 1, filme.nome);
+        //Tarefa 5: Criar um elemento li e colocar
+        // Tarefa 5.1: Criar um elemento span para o ranking
+        // Tarefa 5.2: Criar um elemento span para o nome do filme
+        // Tarefa 5.3: Criar um elemento span para o ano do filme
+        // Tarefa 5.4: Colocar o spans dentro do li
+        // Tarefa 5.5: Colocar o li dentro do ul\\
+    });
+    </script>
+</body>
+</html>
